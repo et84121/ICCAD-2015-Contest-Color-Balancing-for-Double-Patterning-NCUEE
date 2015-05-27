@@ -1,5 +1,9 @@
 language: cpp
 
+compiler:
+  - gcc
+  - clang
+
 branches:
   only:
    - master
@@ -7,4 +11,11 @@ branches:
 before_script: ls
 
 script:
-  - make -C Build
+  - make && make test
+
+notifications:
+  email:
+    recipients:
+      - f411024@gmail.com
+    on_success: change
+    on_failure: always  
