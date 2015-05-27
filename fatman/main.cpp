@@ -52,4 +52,6 @@ int main()
 	r.copy_bottom_f();/////////////////下邊界排序
 	r.print_bottom_f();////////////////印出以下排列數據
 	cout<<endl;
+
+	return 0;
 }
