@@ -53,5 +53,7 @@ int main()
     r.print_bottom_f();////////////////印出以下排列數據
     cout<<endl;
 
+    cout<<"test"<<endl;
+
     return 0;
 }
