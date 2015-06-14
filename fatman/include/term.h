@@ -5,7 +5,7 @@ class rectangle;
 
 class term
 {
-    friend rectangle;
+    friend class rectangle;
     public:
         term();
 		term(int t,int b,int l,int r,int i);
