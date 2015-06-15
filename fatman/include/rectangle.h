@@ -19,6 +19,10 @@ class rectangle
 		void print_right_f();
 		void print_top_f();
 		void print_bottom_f();//¦C¦L¨ç¦¡«Å§i
+		void x_grouping();//
+		void x_group_print();
+		void y_grouping();
+		void y_group_print();
 
     protected:
     private:

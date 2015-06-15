@@ -24,10 +24,10 @@ int main()
     while(!input.eof())
     {
         ////////////////////////讀值
-        input>>term_top;
-        input>>term_bottom;
         input>>term_left;
+        input>>term_bottom;
         input>>term_right;
+        input>>term_top;
         r.newterm(term_top,term_bottom,term_left,term_right);
         ////////////////////////將讀到的值存進陣列裡
 
