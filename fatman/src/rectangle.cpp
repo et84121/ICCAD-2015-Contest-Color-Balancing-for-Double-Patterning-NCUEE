@@ -66,11 +66,11 @@ void norm_copy( int* x_next, int x_next_terms, int* x_next_temp )
 rectangle::rectangle( int num = 0 ):capacity( num )
 {
     terms = 0;
-    termarr = new term[ capacity+1 ];//新增原始陣列
-    termarr_left = new term[ capacity+1 ];//新增左邊界排序陣列
-    termarr_right = new term[ capacity+1 ];//新增右邊界排序陣列
-    termarr_top = new term[ capacity+1 ];//新增上邊界排序陣列
-    termarr_bottom = new term[ capacity+1 ];//新增下邊界排序陣列
+    termarr = new term [ capacity+1 ];//新增原始陣列
+    termarr_left = new term [ capacity+1 ];//新增左邊界排序陣列
+    termarr_right = new term [ capacity+1 ];//新增右邊界排序陣列
+    termarr_top = new term [ capacity+1 ];//新增上邊界排序陣列
+    termarr_bottom = new term [ capacity+1 ];//新增下邊界排序陣列
 }
 rectangle::~rectangle()
 {
