@@ -7,8 +7,8 @@ class term
 {
     friend class rectangle;
     public:
-        term(int, int);
-		term(int t,int b,int l,int r,int i);
+        term();
+		term(int t,int b,int l,int r,int i,int num_x, int num_y);
 		void x_next_newterm(int);
 		void y_next_newterm(int);
 		~term();

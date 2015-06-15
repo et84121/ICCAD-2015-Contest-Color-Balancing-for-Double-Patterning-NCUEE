@@ -35,23 +35,29 @@ int main()
     }
 
     r.print();//////////////////印出原始數據
-    cin>>enter;
+    //cin>>enter;
 
     r.copy_left_f();///////////////////左邊界排序
-    r.print_left_f();//////////////////印出以左排列數據
-    cin>>enter;
+    //r.print_left_f();//////////////////印出以左排列數據
+    //cin>>enter;
 
     r.copy_right_f();//////////////////右邊界排序
-    r.print_right_f();/////////////////印出以右排列數據
-    cin>>enter;
+    //r.print_right_f();/////////////////印出以右排列數據
+    //cin>>enter;
 
     r.copy_top_f();////////////////////上邊界排序
-    r.print_top_f();///////////////////印出以上排列數據
-    cin>>enter;
+    //r.print_top_f();///////////////////印出以上排列數據
+    //cin>>enter;
 
     r.copy_bottom_f();/////////////////下邊界排序
-    r.print_bottom_f();////////////////印出以下排列數據
+    //r.print_bottom_f();////////////////印出以下排列數據
     cout<<endl;
+	r.x_grouping();
+	r.x_group_print();
+	cout<<endl;
+	r.y_grouping();
+	r.y_group_print();
+	cout<<endl;
 
     cout<<"test"<<endl;
 
