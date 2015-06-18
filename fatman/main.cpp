@@ -56,5 +56,6 @@ int main()
 
     cout<<"Hello"<<endl;
     cout<<"test"<<endl;
+    cout<<"beanbean test"<<endl;
     return 0;
 }
