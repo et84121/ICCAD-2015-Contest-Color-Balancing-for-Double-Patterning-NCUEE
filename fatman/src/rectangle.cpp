@@ -4,46 +4,7 @@
 
 using namespace std;
 
-void norm_copy( int*, int, int* );
 
-void term::x_next_newterm(int next_shape)
-{
-	//cout<<"x_next_terms is    :"<<x_next_terms<<endl;
-	//cout<<"x_next_capacity is :"<<x_next_capacity<<endl;
-	if( x_next_terms==x_next_capacity )
-	{
-		x_next_capacity*=2;
-		int *x_next_temp = new int[ x_next_capacity ];////////////////////????x?s??l?}?C???}?C
-		norm_copy( x_next,x_next_terms,x_next_temp);
-		delete [] x_next;
-		x_next=x_next_temp;
-	}
-	x_next[x_next_terms]=next_shape;
-	x_next_terms++;
-}
-
-void term::y_next_newterm(int next_shape)
-{
-	int f;
-	//cout<<"fuck"<<endl;
-	//cin>>f;
-	//cout<<"y_next_terms is :"<<y_next_terms<<endl;
-	//cout<<"y_next_capacity is :"<<y_next_capacity<<endl;
-	//cin>>f;
-	if( y_next_terms==y_next_capacity )////////////////////////////////////////
-	{
-		//cout<<"fuck"<<endl;
-
-		y_next_capacity*=2;
-		int *y_next_temp = new int[ y_next_capacity ];////////////////////????x?s??l?}?C???}?C
-		norm_copy( y_next,y_next_terms,y_next_temp);
-		delete [] y_next;
-		y_next=y_next_temp;
-	}
-	//cout<<"fuck"<<endl;
-	y_next[y_next_terms]=next_shape;
-	y_next_terms++;
-}
 
 //複製陣列之函式
 void copy( term* termarr, int terms, term* temp )
@@ -54,13 +15,6 @@ void copy( term* termarr, int terms, term* temp )
     }
 }
 
-void norm_copy( int* x_next, int x_next_terms, int* x_next_temp )
-{
-	for( int ca=0; ca<x_next_terms; ca++ )
-	{
-		x_next_temp[ca]=x_next[ca];
-	}
-}
 
 //class rectangle 建構，解構子
 rectangle::rectangle( int num = 0 ):capacity( num )
@@ -474,25 +428,28 @@ void rectangle::y_group_print()
 void rectangle::x_grouping()
 {
 	int enter;
+
 	for( int g=0;g<terms;g++ )
 	{
 		int count=g+1;
-		//cout<<"termarr_left[termarr_left[g].left_f].right is    :"<<termarr_left[termarr_left[g].left_f].right<<endl;
-		//cout<<"termarr_left[termarr_left[count].left_f].left is :"<<termarr_left[termarr_left[count].left_f].left<<endl;
-
+		cout<<"termarr_left[termarr_left[g].left_f].right is    :"<<termarr_left[termarr_left[g].left_f].right<<endl;
+		cout<<"termarr_left[termarr_left[count].left_f].left is :"<<termarr_left[termarr_left[count].left_f].left<<endl;
+        //cout<<"test_out"<<endl;
 		while( ( (termarr_left[termarr_left[count].left_f].left - termarr_left[termarr_left[g].left_f].right) < 50 )&&(count<terms) )
 		{
-			//cout<<endl;
-			//cout<<"termarr_left[termarr_left[g].left_f].top is        :"<<termarr_left[termarr_left[g].left_f].top<<endl;
-			//cout<<"termarr_left[termarr_left[count].left_f].bottom is :"<<termarr_left[termarr_left[count].left_f].bottom<<endl;
-			//cout<<"compare shape "<<g+1<<" and shape "<<count+1<<endl;
+		    //cout<<"test_in_while"<<endl;
+			cout<<endl;
+			cout<<"termarr_left[termarr_left[g].left_f].top is        :"<<termarr_left[termarr_left[g].left_f].top<<endl;
+			cout<<"termarr_left[termarr_left[count].left_f].bottom is :"<<termarr_left[termarr_left[count].left_f].bottom<<endl;
+			cout<<"compare shape "<<g+1<<" and shape "<<count+1<<endl;
 			if( ((termarr_left[termarr_left[g].left_f].top) > (termarr_left[termarr_left[count].left_f].bottom)) && ((termarr_left[termarr_left[g].left_f].bottom) < (termarr_left[termarr_left[count].left_f].top)))
 			{
+			    //cout<<"test_in_if"<<endl;
 				termarr_left[termarr_left[g].left_f].x_next_newterm(termarr_left[termarr_left[count].left_f].initial);
 				termarr_bottom[termarr_left[g].bottom_f].x_next_newterm(termarr_left[termarr_left[count].left_f].initial);
 				termarr_right[termarr_left[g].right_f].x_next_newterm(termarr_left[termarr_left[count].left_f].initial);
 				termarr_top[termarr_left[g].top_f].x_next_newterm(termarr_left[termarr_left[count].left_f].initial);
-				/*cout<<g+1<<" and "<<count+1<<"is linked!"<<endl;
+				cout<<g+1<<" and "<<count+1<<"is linked!"<<endl;
 				cout<<"shape "<<g+1<<"'s left is :  "<<termarr_left[termarr_left[g].left_f].left<<endl;
 				cout<<"shape "<<g+1<<"'s bottom is :"<<termarr_left[termarr_left[g].left_f].bottom<<endl;
 				cout<<"shape "<<g+1<<"'s right is : "<<termarr_left[termarr_left[g].left_f].right<<endl;
@@ -501,18 +458,18 @@ void rectangle::x_grouping()
 				cout<<"shape "<<count+1<<"'s left is :  "<<termarr_left[termarr_left[count].left_f].left<<endl;
 				cout<<"shape "<<count+1<<"'s bottom is :"<<termarr_left[termarr_left[count].left_f].bottom<<endl;
 				cout<<"shape "<<count+1<<"'s right is : "<<termarr_left[termarr_left[count].left_f].right<<endl;
-				cout<<"shape "<<count+1<<"'s top is :   "<<termarr_left[termarr_left[count].left_f].top<<endl;*/
+				cout<<"shape "<<count+1<<"'s top is :   "<<termarr_left[termarr_left[count].left_f].top<<endl;
 				count++;
 			}
 			else
 			{
-				//cout<<"count go next!"<<endl;
+				cout<<"count go next!"<<endl;
 				count++;
 			}
 		}
-		//cout<<"count is "<<g+1<<endl;
-		//cin>>enter;
-		//cout<<endl;
+		cout<<"count is "<<g+1<<endl;
+		cin>>enter;
+		cout<<endl;
 	}
 }
 
