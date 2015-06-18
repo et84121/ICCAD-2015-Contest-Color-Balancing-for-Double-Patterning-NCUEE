@@ -2,18 +2,18 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="include\rectangle.h" open="1" top="0" tabpos="2">
-		<Cursor position="754" topLine="11" />
+		<Cursor position="578" topLine="11" />
 	</File>
-	<File name="include\term.h" open="0" top="0" tabpos="4">
-		<Cursor position="434" topLine="13" />
+	<File name="include\term.h" open="1" top="0" tabpos="4">
+		<Cursor position="422" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="1370" topLine="38" />
+		<Cursor position="272" topLine="31" />
 	</File>
 	<File name="src\rectangle.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="259" topLine="54" />
+		<Cursor position="2031" topLine="396" />
 	</File>
-	<File name="src\term.cpp" open="1" top="1" tabpos="4">
-		<Cursor position="93" topLine="0" />
+	<File name="src\term.cpp" open="1" top="1" tabpos="5">
+		<Cursor position="1560" topLine="50" />
 	</File>
 </CodeBlocks_layout_file>

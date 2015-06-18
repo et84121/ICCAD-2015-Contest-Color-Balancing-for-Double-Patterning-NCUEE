@@ -7,14 +7,9 @@ class term
 {
     friend class rectangle;
     public:
-//<<<<<<< HEAD
-        //term(int num_x, int num_y);
-		//term(int t,int b,int l,int r,int i,int num_x, int num_y);
-//=======
         term();//(棠)新增的無參數建構子
         term(int , int );
 		term(int t,int b,int l,int r,int i);
-//>>>>>>> origin/master
 		void x_next_newterm( const int next_shape_x);
 		void y_next_newterm( const int next_shape_y);
 		~term();
