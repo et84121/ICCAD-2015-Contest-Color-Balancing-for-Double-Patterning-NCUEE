@@ -31,3 +31,4 @@
 *.layout
 *.depend
 fatman/fatman.layout
+*.layout

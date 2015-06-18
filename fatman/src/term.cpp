@@ -30,18 +30,13 @@ void norm_copy( int*, int, int* );
 
 void term::y_next_newterm(int next_shape_y)
 {
-	int f;
-	//cout<<"fuck"<<endl;
-	//cin>>f;
-	//cout<<"y_next_terms is :"<<y_next_terms<<endl;
-	//cout<<"y_next_capacity is :"<<y_next_capacity<<endl;
-	//cin>>f;
-	if( y_next_terms==y_next_capacity )////////////////////////////////////////
+
+	if( y_next_terms==y_next_capacity )
 	{
 		//cout<<"fuck"<<endl;
 
 		y_next_capacity*=2;
-		int *y_next_temp = new int[ y_next_capacity ];////////////////////????x?s??l?}?C???}?C
+		int *y_next_temp = new int[ y_next_capacity ];
 		norm_copy( y_next,y_next_terms,y_next_temp);
 		delete [] y_next;
 		y_next=y_next_temp;
