@@ -54,7 +54,5 @@ int main()
 	r.y_group_print();
 	cout<<endl;
 
-    cout<<"Hello"<<endl;
-    cout<<"test"<<endl;
     return 0;
 }
