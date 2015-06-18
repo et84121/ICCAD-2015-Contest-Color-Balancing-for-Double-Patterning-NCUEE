@@ -53,12 +53,12 @@ void term::y_next_newterm(int next_shape_y)
 
 void term::x_next_newterm(int next_shape_x)
 {
-	cout<<"x_next_terms is    :"<<x_next_terms<<endl;
+	cout<<"x_next_terms is    :"<<x_next_terms<<endl;//have a bug ,"x_next_terms" and "x_next_capacity" is wrong number
 	cout<<"x_next_capacity is :"<<x_next_capacity<<endl;
 	if( x_next_terms==x_next_capacity )
 	{
 		x_next_capacity*=2;
-		int *x_next_temp = new int[ x_next_capacity ];////////////////////????x?s??l?}?C???}?C
+		int *x_next_temp = new int[ x_next_capacity ];
 		norm_copy( x_next,x_next_terms,x_next_temp);
 		delete [] x_next;
 		x_next=x_next_temp;
