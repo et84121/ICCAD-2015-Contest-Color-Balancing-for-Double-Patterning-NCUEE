@@ -13,6 +13,9 @@ before_script: cd ./fatman
 script:
   - make clean debug
 
+after_success:
+  - ./bin/Release/fatman
+  
 notifications:
   email:
     recipients:
