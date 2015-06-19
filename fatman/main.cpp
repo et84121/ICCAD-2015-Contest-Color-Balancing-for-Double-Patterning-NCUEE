@@ -30,19 +30,13 @@ int main()
         input>>term_top;
         r.newterm(term_top,term_bottom,term_left,term_right);
         //將讀到的值存進陣列裡
-
         count++;
     }
 
     r.print();//印出原始數據
-
-
     r.copy_left_f();//左邊界排序
-
     r.copy_right_f();//右邊界排序
-
     r.copy_top_f();//上邊界排序
-
     r.copy_bottom_f();//下邊界排序
     cout<<endl;
 

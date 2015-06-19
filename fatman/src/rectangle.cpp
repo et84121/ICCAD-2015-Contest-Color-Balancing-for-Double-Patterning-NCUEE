@@ -427,17 +427,14 @@ void rectangle::y_group_print()
 
 void rectangle::x_grouping()
 {
-	int enter;
-
 	for( int g=0;g<terms;g++ )
 	{
-		int count=g+1;
+	    //g是比較的shape
+		int count=g+1;//count 為被比較的shape
 		cout<<"termarr_left[termarr_left[g].left_f].right is    :"<<termarr_left[termarr_left[g].left_f].right<<endl;
 		cout<<"termarr_left[termarr_left[count].left_f].left is :"<<termarr_left[termarr_left[count].left_f].left<<endl;
-        //cout<<"test_out"<<endl;
 		while( ( (termarr_left[termarr_left[count].left_f].left - termarr_left[termarr_left[g].left_f].right) < 50 )&&(count<terms) )
 		{
-		    //cout<<"test_in_while"<<endl;
 			cout<<endl;
 			cout<<"termarr_left[termarr_left[g].left_f].top is        :"<<termarr_left[termarr_left[g].left_f].top<<endl;
 			cout<<"termarr_left[termarr_left[count].left_f].bottom is :"<<termarr_left[termarr_left[count].left_f].bottom<<endl;
@@ -468,7 +465,6 @@ void rectangle::x_grouping()
 			}
 		}
 		cout<<"count is "<<g+1<<endl;
-		cin>>enter;
 		cout<<endl;
 	}
 }
