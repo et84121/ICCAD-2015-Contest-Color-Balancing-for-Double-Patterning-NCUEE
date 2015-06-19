@@ -22,10 +22,7 @@ int main()
     ifstream input("CADtest.txt");
     rectangle r(capacity_main);
 
-    while(!input.eof())x_next_terms = 0;
-	x_next = new int[ x_next_capacity+1 ];
-	y_next_terms = 0;
-	y_next = new int[ y_next_capacity+1 ];
+    while(!input.eof())
     {
         //Åª­È
         input>>term_left;
@@ -52,5 +49,13 @@ int main()
 	r.y_group_print();
 	cout<<endl;
 
+    group g1;
+    //creat the object of the group
+
+    g1.add(&r.termarr[1]);
+    g1.add(&r.termarr[2]);
+    //add shapes into the group
+    g1.print();
+    //print all of the shape in g1
     return 0;
 }

@@ -24,13 +24,15 @@ class rectangle
 		void y_grouping();
 		void y_group_print();
 
-    protected:
-    private:
-        term *termarr;//原始數值陣列
+		term *termarr;//原始數值陣列
 		term *termarr_left;//以左邊界大小作排列的陣列
 		term *termarr_right;//以右邊界大小作排列的陣列
 		term *termarr_top;//以上邊界大小作排列的陣列
 		term *termarr_bottom;//以下邊界大小作排列的陣列
+
+    protected:
+    private:
+
 		int capacity;//陣列最大可容納的矩陣數量
 		int terms;//陣列裡現在存有的陣列數量
 };

@@ -34,9 +34,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/group.h" />
 		<Unit filename="include/rectangle.h" />
 		<Unit filename="include/term.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/group.cpp" />
 		<Unit filename="src/rectangle.cpp" />
 		<Unit filename="src/term.cpp" />
 		<Extensions>

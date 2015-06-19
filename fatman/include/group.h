@@ -2,23 +2,27 @@
 #define GROUP_H
 #include "rectangle.h"
 #include "term.h"
+#include <vector>
 #include <iostream>
+
+using namespace std;
+
+class term;
 
 class group
 {
     public:
         group();
         virtual ~group();
-        term **arr;
-        //double pointer
-        //Reference material http://openhome.cc/Gossip/CppGossip/DoublePointer.html
-        void add(term* T);
-        //add term into the group
+        void add(term * T);
+        //add a shape into the group
+        void print();
+        //print all of the shape in this group
     protected:
     private:
-        int capacity;//pointer array's capcity
-        int amount;//pointer array's amount
-
+        vector<term *> pointer_vector;
+        //use vector to store the term's pointer
+        int order;//the order of the group
 };
 
 #endif // GROUP_H

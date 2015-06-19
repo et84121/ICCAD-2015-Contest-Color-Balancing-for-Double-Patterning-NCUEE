@@ -13,9 +13,8 @@ class term
 		void x_next_newterm( const int next_shape_x);
 		void y_next_newterm( const int next_shape_y);
 		~term();
-    protected:
-    private:
-        int top;
+
+		int top;
 		int bottom;
 		int left;
 		int right;
@@ -30,6 +29,9 @@ class term
 		int *y_next;
 		int y_next_capacity;
 		int y_next_terms;
+    protected:
+    private:
+
 };
 
 #endif // TERM_H

@@ -1,10 +1,12 @@
 #include "group.h"
-
-using namespace group;
+#include "term.h"
+#include <vector>
+#include<iostream>
+using namespace std;
 
 group::group()
 {
-    //ctor
+
 }
 
 group::~group()
@@ -13,10 +15,16 @@ group::~group()
 }
 
 
-group::add(term* T)
+void group::add(term* T)
 {
-    if(amount>=capacity){
-        capacity*=2;
-        term* temp = new term* []
-    }
+    pointer_vector.push_back(T);
+}
+
+void group::print()
+{
+    if(pointer_vector.size()>0){
+        for(int a=0;a<pointer_vector.size();a++){
+            cout<<"the shape in this group:"<<pointer_vector[a]->initial<<endl;
+        }
+    }else  cout<<"It's no shapes in this group";
 }
