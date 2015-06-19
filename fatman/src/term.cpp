@@ -6,11 +6,8 @@ using namespace std;
 
 term::term()
 {
-    // default constructor
-}
-
-term::term(int num_x=0 , int num_y=0 ):x_next_capacity( num_x ), y_next_capacity( num_y )
-{
+    x_next_capacity = 0;
+    y_next_capacity = 0 ;
     x_next_terms = 0;
 	x_next = new int[ x_next_capacity+1 ];
 	y_next_terms = 0;

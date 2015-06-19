@@ -7,8 +7,7 @@ class term
 {
     friend class rectangle;
     public:
-        term();//(棠)新增的無參數建構子
-        term(int , int );
+        term();
 		term(int t,int b,int l,int r,int i);
 		void x_next_newterm( const int next_shape_x);
 		void y_next_newterm( const int next_shape_y);
