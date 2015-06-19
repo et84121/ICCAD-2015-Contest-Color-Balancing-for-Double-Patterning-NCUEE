@@ -470,7 +470,6 @@ void rectangle::x_grouping()
 
 void rectangle::y_grouping()
 {
-	int enter;
 	for( int g=0;g<terms;g++ )
 	{
 		int count=g+1;
