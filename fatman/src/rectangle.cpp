@@ -441,7 +441,6 @@ void rectangle::x_grouping()
 			cout<<"compare shape "<<g+1<<" and shape "<<count+1<<endl;
 			if( ((termarr_left[termarr_left[g].left_f].top) > (termarr_left[termarr_left[count].left_f].bottom)) && ((termarr_left[termarr_left[g].left_f].bottom) < (termarr_left[termarr_left[count].left_f].top)))
 			{
-			    //cout<<"test_in_if"<<endl;
 				termarr_left[termarr_left[g].left_f].x_next_newterm(termarr_left[termarr_left[count].left_f].initial);
 				termarr_bottom[termarr_left[g].bottom_f].x_next_newterm(termarr_left[termarr_left[count].left_f].initial);
 				termarr_right[termarr_left[g].right_f].x_next_newterm(termarr_left[termarr_left[count].left_f].initial);
@@ -475,43 +474,20 @@ void rectangle::y_grouping()
 	for( int g=0;g<terms;g++ )
 	{
 		int count=g+1;
-		//cout<<"termarr_bottom[termarr_left[g].bottom_f].top is        : "<<termarr_bottom[termarr_left[g].bottom_f].top<<endl;
-		//cout<<"termarr_bottom[termarr_left[count].bottom_f].bottom is : "<<termarr_bottom[termarr_left[count].bottom_f].bottom<<endl;
-
 		while( ( (termarr_bottom[termarr_left[count].bottom_f].bottom - termarr_bottom[termarr_left[g].bottom_f].top) < 100 )&&(count<terms) )
 		{
-			//cout<<endl;
-			//cout<<"termarr_bottom[termarr_left[g].bottom_f].right is     : "<<termarr_bottom[termarr_left[g].bottom_f].right<<endl;
-			//cout<<"termarr_bottom[termarr_left[count].bottom_f].left is  : "<<termarr_bottom[termarr_left[count].bottom_f].left<<endl;
-			//cout<<"termarr_bottom[termarr_left[g].bottom_f].left is      : "<<termarr_bottom[termarr_left[g].bottom_f].left<<endl;
-			//cout<<"termarr_bottom[termarr_left[count].bottom_f].right is : "<<termarr_bottom[termarr_left[count].bottom_f].right<<endl;
-			//cout<<"compare shape "<<g+1<<" and shape "<<count+1<<endl;
 			if( ((termarr_bottom[termarr_left[g].bottom_f].right) > (termarr_bottom[termarr_left[count].bottom_f].left)) && ((termarr_bottom[termarr_left[g].bottom_f].left) < (termarr_bottom[termarr_left[count].bottom_f].right)))
 			{
 				termarr_left[termarr_left[g].left_f].y_next_newterm(termarr_bottom[termarr_left[count].bottom_f].initial);
 				termarr_bottom[termarr_left[g].bottom_f].y_next_newterm(termarr_bottom[termarr_left[count].bottom_f].initial);
 				termarr_right[termarr_left[g].right_f].y_next_newterm(termarr_bottom[termarr_left[count].bottom_f].initial);
 				termarr_top[termarr_left[g].top_f].y_next_newterm(termarr_bottom[termarr_left[count].bottom_f].initial);
-				//cout<<g+1<<" and "<<count+1<<"is linked!"<<endl;
-				//cout<<"shape "<<g+1<<"'s left is :  "<<termarr_bottom[termarr_left[g].bottom_f].left<<endl;
-				//cout<<"shape "<<g+1<<"'s bottom is :"<<termarr_bottom[termarr_left[g].bottom_f].bottom<<endl;
-				//cout<<"shape "<<g+1<<"'s right is : "<<termarr_bottom[termarr_left[g].bottom_f].right<<endl;
-				//cout<<"shape "<<g+1<<"'s top is :   "<<termarr_bottom[termarr_left[g].bottom_f].top<<endl;
-				//cout<<endl;
-				//cout<<"shape "<<count+1<<"'s left is :  "<<termarr_bottom[termarr_left[count].bottom_f].left<<endl;
-				//cout<<"shape "<<count+1<<"'s bottom is :"<<termarr_bottom[termarr_left[count].bottom_f].bottom<<endl;
-				//cout<<"shape "<<count+1<<"'s right is : "<<termarr_bottom[termarr_left[count].bottom_f].right<<endl;
-				//cout<<"shape "<<count+1<<"'s top is :   "<<termarr_bottom[termarr_left[count].bottom_f].top<<endl;
 				count++;
 			}
 			else
 			{
-				//cout<<"count go next!"<<endl;
 				count++;
 			}
 		}
-		//cout<<"count is "<<g+1<<endl;
-		//cin>>enter;
-		//cout<<endl;
 	}
 }
