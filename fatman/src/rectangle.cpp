@@ -4,17 +4,14 @@
 
 using namespace std;
 
-
-
 //複製陣列之函式
-void copy( term* termarr, int terms, term* temp )
+void copy( term* termarr, int terms, term* temp )//copy the type of term(array)
 {
     for( int ca=0; ca<terms; ca++ )
     {
         temp[ca]=termarr[ca];
     }
 }
-
 
 //class rectangle 建構，解構子
 rectangle::rectangle( int num = 0 ):capacity( num )
@@ -32,9 +29,8 @@ rectangle::~rectangle()
 }
 
 
-
 //以左邊界排序之函式
-void rectangle::copy_left_f()
+void rectangle::copy_left_f()//sorting by left edge
 {
     int hold_left=0;
     int hold_right=0;
@@ -69,8 +65,6 @@ void rectangle::copy_left_f()
             }
         }
     }
-
-
 //將號碼牌發給每一個陣列的 left_f
     for( int t=0; t<terms; t++)
     {
@@ -223,7 +217,6 @@ void rectangle::copy_bottom_f()
 //新增一個矩形的位子之函式
 void rectangle::newterm( const int newtop, const int newbottom, const int newleft, const int newright )
 {
-
     //若陣列的空間不足，則將空間擴充成現在的兩倍
     if( terms==capacity )
     {
@@ -288,7 +281,7 @@ void rectangle::newterm( const int newtop, const int newbottom, const int newlef
 ///////////////////////////////////新增一個矩形的位子之函式//////////////////////////////////////////////////////////////
 
 ///////////////////////////////////列印原始數據之函式////////////////////////////////////////////////////////////////////
-void rectangle::print()
+void rectangle::print()//output the result of sorting by origin
 {
     cout<<"Print initial:"<<endl;
     for( int c = 0; c<terms; c++ )
@@ -302,14 +295,12 @@ void rectangle::print()
         cout << endl;
     }
     cout << endl;
-    cout << endl;
-
 }
 ///////////////////////////////////列印原始數據之函式////////////////////////////////////////////////////////////////////
 
 
 ///////////////////////////////////列印以左邊界排序之函式////////////////////////////////////////////////////////////////
-void rectangle::print_left_f()
+void rectangle::print_left_f()//output the result of sorting by left edge
 {
     cout<<"Print left first:"<<endl;
     for( int p=0; p<terms; p++)
@@ -333,7 +324,7 @@ void rectangle::print_left_f()
 ///////////////////////////////////列印以左邊界排序之函式////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////列印以右邊界排序之函式////////////////////////////////////////////////////////////////
-void rectangle::print_right_f()
+void rectangle::print_right_f()//output the result of sorting by right edge
 {
     cout<<"Print right first:"<<endl;
     for( int p=0; p<terms; p++)
@@ -355,7 +346,7 @@ void rectangle::print_right_f()
 ///////////////////////////////////列印以右邊界排序之函式////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////列印以上邊界排序之函式////////////////////////////////////////////////////////////////
-void rectangle::print_top_f()
+void rectangle::print_top_f()//output the result of sorting by top edge
 {
     cout<<"Print top first:"<<endl;
     for( int p=0; p<terms; p++)
@@ -378,7 +369,8 @@ void rectangle::print_top_f()
 ///////////////////////////////////列印以上邊界排序之函式////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////列印以下邊界排序之函式////////////////////////////////////////////////////////////////
-void rectangle::print_bottom_f()
+
+void rectangle::print_bottom_f()//output the result of sorting by bottom edge
 {
     cout<<"Print bottom first:"<<endl;
     for( int p=0; p<terms; p++)
@@ -399,76 +391,55 @@ void rectangle::print_bottom_f()
 }
 ///////////////////////////////////列印以下邊界排序之函式////////////////////////////////////////////////////////////////
 
-void rectangle::x_group_print()
+void rectangle::x_group_print()//output the result of x single link
 {
 	for(int c=0;c<terms;c++ )
 	{
 		for( int i=0;i<termarr_left[termarr_left[c].left_f].x_next_terms;i++ )
 		{
-			//if(termarr_left[termarr_left[c].left_f].x_next[i]!=0)
 			cout<<"Shape(in initial) "<<termarr_left[termarr_left[c].left_f].initial+1<<" is group with "<<termarr_left[termarr_left[c].left_f].x_next[i]+1<<endl;
 		}
 
 	}
 }
 
-void rectangle::y_group_print()
+void rectangle::y_group_print()//output the result of y single link
 {
 	for(int c=0;c<terms;c++ )
 	{
 		for( int i=0;i<termarr_bottom[termarr_left[c].bottom_f].y_next_terms;i++ )
 		{
-			//if(termarr_bottom[termarr_left[c].bottom_f].y_next[i]!=0)
 			cout<<"Shape(in initial) "<<termarr_bottom[termarr_left[c].bottom_f].initial+1<<" is group with "<<termarr_bottom[termarr_left[c].bottom_f].y_next[i]+1<<endl;
 		}
 
 	}
 }
 
-void rectangle::x_grouping()
+void rectangle::x_grouping()//x single link
 {
 	for( int g=0;g<terms;g++ )
 	{
 	    //g是比較的shape
 		int count=g+1;//count 為被比較的shape
-		cout<<"termarr_left[termarr_left[g].left_f].right is    :"<<termarr_left[termarr_left[g].left_f].right<<endl;
-		cout<<"termarr_left[termarr_left[count].left_f].left is :"<<termarr_left[termarr_left[count].left_f].left<<endl;
 		while( ( (termarr_left[termarr_left[count].left_f].left - termarr_left[termarr_left[g].left_f].right) < 50 )&&(count<terms) )
 		{
-			cout<<endl;
-			cout<<"termarr_left[termarr_left[g].left_f].top is        :"<<termarr_left[termarr_left[g].left_f].top<<endl;
-			cout<<"termarr_left[termarr_left[count].left_f].bottom is :"<<termarr_left[termarr_left[count].left_f].bottom<<endl;
-			cout<<"compare shape "<<g+1<<" and shape "<<count+1<<endl;
 			if( ((termarr_left[termarr_left[g].left_f].top) > (termarr_left[termarr_left[count].left_f].bottom)) && ((termarr_left[termarr_left[g].left_f].bottom) < (termarr_left[termarr_left[count].left_f].top)))
 			{
 				termarr_left[termarr_left[g].left_f].x_next_newterm(termarr_left[termarr_left[count].left_f].initial);
 				termarr_bottom[termarr_left[g].bottom_f].x_next_newterm(termarr_left[termarr_left[count].left_f].initial);
 				termarr_right[termarr_left[g].right_f].x_next_newterm(termarr_left[termarr_left[count].left_f].initial);
 				termarr_top[termarr_left[g].top_f].x_next_newterm(termarr_left[termarr_left[count].left_f].initial);
-				cout<<g+1<<" and "<<count+1<<"is linked!"<<endl;
-				cout<<"shape "<<g+1<<"'s left is :  "<<termarr_left[termarr_left[g].left_f].left<<endl;
-				cout<<"shape "<<g+1<<"'s bottom is :"<<termarr_left[termarr_left[g].left_f].bottom<<endl;
-				cout<<"shape "<<g+1<<"'s right is : "<<termarr_left[termarr_left[g].left_f].right<<endl;
-				cout<<"shape "<<g+1<<"'s top is :   "<<termarr_left[termarr_left[g].left_f].top<<endl;
-				cout<<endl;
-				cout<<"shape "<<count+1<<"'s left is :  "<<termarr_left[termarr_left[count].left_f].left<<endl;
-				cout<<"shape "<<count+1<<"'s bottom is :"<<termarr_left[termarr_left[count].left_f].bottom<<endl;
-				cout<<"shape "<<count+1<<"'s right is : "<<termarr_left[termarr_left[count].left_f].right<<endl;
-				cout<<"shape "<<count+1<<"'s top is :   "<<termarr_left[termarr_left[count].left_f].top<<endl;
 				count++;
 			}
 			else
 			{
-				cout<<"count go next!"<<endl;
 				count++;
 			}
 		}
-		cout<<"count is "<<g+1<<endl;
-		cout<<endl;
 	}
 }
 
-void rectangle::y_grouping()
+void rectangle::y_grouping()//y single link
 {
 	for( int g=0;g<terms;g++ )
 	{
