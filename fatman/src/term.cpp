@@ -31,7 +31,7 @@ void norm_copy( int*, int, int* );
 void term::y_next_newterm(int next_shape_y)
 {
 
-	if( y_next_terms==y_next_capacity )
+	if( y_next_terms>=y_next_capacity )
 	{
 		y_next_capacity*=2;
 		int *y_next_temp = new int[ y_next_capacity ];
@@ -47,7 +47,7 @@ void term::x_next_newterm(int next_shape_x)
 {
 	cout<<"x_next_terms is    :"<<x_next_terms<<endl;//have a bug ,"x_next_terms" and "x_next_capacity" is wrong number
 	cout<<"x_next_capacity is :"<<x_next_capacity<<endl;
-	if( x_next_terms==x_next_capacity )
+	if( x_next_terms>=x_next_capacity )
 	{
 		x_next_capacity*=2;
 		int *x_next_temp = new int[ x_next_capacity ];
