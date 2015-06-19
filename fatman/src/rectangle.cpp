@@ -1,5 +1,6 @@
 #include "rectangle.h"
 #include "term.h"
+#include "group.h"
 #include<iostream>
 
 using namespace std;

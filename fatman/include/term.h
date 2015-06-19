@@ -1,5 +1,6 @@
 #ifndef TERM_H
 #define TERM_H
+#include "group.h"
 #include "rectangle.h"
 class rectangle;
 

@@ -1,7 +1,7 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 #include "term.h"
-
+#include "group.h"
 class term;
 
 class rectangle

@@ -1,5 +1,6 @@
 #include<iostream>
 #include<fstream>
+#include "group.h"
 #include "term.h"
 #include "rectangle.h"
 
@@ -21,7 +22,10 @@ int main()
     ifstream input("CADtest.txt");
     rectangle r(capacity_main);
 
-    while(!input.eof())
+    while(!input.eof())x_next_terms = 0;
+	x_next = new int[ x_next_capacity+1 ];
+	y_next_terms = 0;
+	y_next = new int[ y_next_capacity+1 ];
     {
         //Åª­È
         input>>term_left;
