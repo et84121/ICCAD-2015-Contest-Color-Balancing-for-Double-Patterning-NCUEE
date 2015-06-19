@@ -30,5 +30,5 @@
 # code :: block ªºÀÉ
 *.layout
 *.depend
-fatman/fatman.layout
 *.layout
+*.cscope_file_list

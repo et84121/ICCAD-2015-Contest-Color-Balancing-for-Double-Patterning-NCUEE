@@ -224,7 +224,7 @@ void rectangle::copy_bottom_f()
 void rectangle::newterm( const int newtop, const int newbottom, const int newleft, const int newright )
 {
 
-    /////////////////////////////////////若陣列的空間不足，則將空間擴充成現在的兩倍//////////////////////////////////////
+    //若陣列的空間不足，則將空間擴充成現在的兩倍
     if( terms==capacity )
     {
         capacity*=2;

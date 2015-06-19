@@ -33,15 +33,12 @@ void term::y_next_newterm(int next_shape_y)
 
 	if( y_next_terms==y_next_capacity )
 	{
-		//cout<<"fuck"<<endl;
-
 		y_next_capacity*=2;
 		int *y_next_temp = new int[ y_next_capacity ];
 		norm_copy( y_next,y_next_terms,y_next_temp);
 		delete [] y_next;
 		y_next=y_next_temp;
 	}
-	//cout<<"fuck"<<endl;
 	y_next[y_next_terms]=next_shape_y;
 	y_next_terms++;
 }
