@@ -9,7 +9,7 @@ class rectangle
     public:
         rectangle(int);
         virtual ~rectangle();
-        void newterm( const int newtop,const int newbottom,const int newleft,const int newright );//¥æ´«¨ç¦¡«Å§i
+        void newterm( const int newtop,const int newbottom,const int newleft,const int newright );//add shape into something
 		void copy_left_f();
 		void copy_right_f();
 		void copy_top_f();

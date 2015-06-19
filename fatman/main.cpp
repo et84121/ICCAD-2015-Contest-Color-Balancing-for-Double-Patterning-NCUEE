@@ -1,5 +1,6 @@
 #include<iostream>
 #include<fstream>
+#include<vector>
 #include "group.h"
 #include "term.h"
 #include "rectangle.h"
@@ -17,7 +18,7 @@ int main()
     int capacity_main=1;
     int count=0;
     int initial_num=0;
-    int enter;
+    vector<group> list_of_group;
 
     ifstream input("CADtest.txt");
     rectangle r(capacity_main);
@@ -49,13 +50,26 @@ int main()
 	r.y_group_print();
 	cout<<endl;
 
+
+    //<--funtion use example.this can delete atfer you kown how to use-->
     group g1;
     //creat the object of the group
-
     g1.add(&r.termarr[1]);
     g1.add(&r.termarr[2]);
     //add shapes into the group
     g1.print();
     //print all of the shape in g1
+    cout<<g1.is_in_group(&r.termarr[1])<<endl;
+
+    //start grouping the shape
+//	for(int c=0;c<terms;c++ )
+//	{
+//		for( int i=0;i<termarr_left[termarr_left[c].left_f].x_next_terms;i++ )
+//		{
+//			cout<<"Shape(in initial) "<<termarr_left[termarr_left[c].left_f].initial+1<<" is group with "<<termarr_left[termarr_left[c].left_f].x_next[i]+1<<endl;
+//		}
+//
+//	}
+
     return 0;
 }

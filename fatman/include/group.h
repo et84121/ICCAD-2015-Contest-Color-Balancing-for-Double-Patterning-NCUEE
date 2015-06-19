@@ -18,6 +18,9 @@ class group
         //add a shape into the group
         void print();
         //print all of the shape in this group
+        static int ordered_number;
+        //the order will count automaticly with object being created
+        bool is_in_group(term*);
     protected:
     private:
         vector<term *> pointer_vector;
