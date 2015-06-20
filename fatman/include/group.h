@@ -21,6 +21,10 @@ class group
         static int ordered_number;
         //the order will count automaticly with object being created
         bool is_in_group(term*);
+        static vector<group*> groups;
+        //this is a static member, it's offer a container to store all of the groups
+        static int In_which_group(term *);
+        //this will return a number which is the order of the shape located group
     protected:
     private:
         vector<term *> pointer_vector;

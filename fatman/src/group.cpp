@@ -5,8 +5,8 @@
 using namespace std;
 
 int group::ordered_number = 1;
+vector<group*> group::groups;
 //initialize the staic menber
-
 
 group::group()
 {
