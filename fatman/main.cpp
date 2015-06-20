@@ -5,7 +5,6 @@
 #include "term.h"
 #include "rectangle.h"
 
-
 using namespace std;
 
 int main()
@@ -48,16 +47,7 @@ int main()
 	cout<<endl;
 
 
-//    //<--funtion use example.this can delete atfer you kown how to use-->
-//    group g1;
-//    //creat the object of the group
-//    g1.add(&r.termarr[1]);
-//    g1.add(&r.termarr[2]);
-//    //add shapes into the group
-//    g1.print();
-//    //print all of the shape in g1
-//    cout<<g1.is_in_group(&r.termarr[1])<<endl;
-
+    //print all of groups
     for(int a=0;a<group::groups.size();a++){
         group::groups[a]->print();
     }
