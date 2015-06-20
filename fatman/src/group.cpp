@@ -26,6 +26,7 @@ void group::add(term* T)
     pointer_vector.push_back(T);
 }
 
+
 void group::print()
 {
     if(pointer_vector.size()>0){
