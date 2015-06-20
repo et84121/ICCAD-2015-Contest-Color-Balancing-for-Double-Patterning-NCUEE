@@ -30,7 +30,7 @@ void group::print()
 {
     if(pointer_vector.size()>0){
         for(int a=0;a<pointer_vector.size();a++){
-            cout<<"shape "<<pointer_vector[a]->initial<<" in "<<order<<"'s group"<<endl;
+            cout<<"shape "<<pointer_vector[a]->initial+1<<" in "<<order<<"'s group"<<endl;
         }
     }else  cout<<"It's no shapes in this group";
 }

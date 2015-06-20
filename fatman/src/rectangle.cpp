@@ -427,15 +427,19 @@ void rectangle::x_grouping()//x single link
 			if( ((termarr_left[termarr_left[g].left_f].top) > (termarr_left[termarr_left[count].left_f].bottom)) && ((termarr_left[termarr_left[g].left_f].bottom) < (termarr_left[termarr_left[count].left_f].top)))
 			{
 			    bool is_in_groups=0;
-			    if(!group::groups.size()){
                     for(int a=0;a<group::groups.size();a++){
                         if(group::groups[a]->is_in_group(&termarr_left[termarr_left[g].left_f])){
                             group::groups[a]->add(&termarr_left[termarr_left[count].left_f]);
                             is_in_groups = 1;
                             break;
                         }
+                        if(group::groups[a]->is_in_group(&termarr_left[termarr_left[count].left_f])){
+                            group::groups[a]->add(&termarr_left[termarr_left[g].left_f]);
+                            is_in_groups = 1;
+                            break;
+                        }
                     }
-			    }
+
 			    if(!is_in_groups){
                     group* new_group = new group;
                     group::groups.push_back(new_group);
@@ -467,6 +471,29 @@ void rectangle::y_grouping()//y single link
 		{
 			if( ((termarr_bottom[termarr_left[g].bottom_f].right) > (termarr_bottom[termarr_left[count].bottom_f].left)) && ((termarr_bottom[termarr_left[g].bottom_f].left) < (termarr_bottom[termarr_left[count].bottom_f].right)))
 			{
+
+			    bool is_in_groups=0;
+
+                    for(int a=0;a<group::groups.size();a++){
+                        if(group::groups[a]->is_in_group(&termarr_bottom[termarr_left[g].bottom_f])){
+                            group::groups[a]->add(&termarr_bottom[termarr_left[count].bottom_f]);
+                            is_in_groups = 1;
+                            break;
+                        }
+                        if(group::groups[a]->is_in_group(&termarr_bottom[termarr_left[count].bottom_f])){
+                            group::groups[a]->add(&termarr_bottom[termarr_left[g].bottom_f]);
+                            is_in_groups = 1;
+                            break;
+                        }
+                    }
+
+			    if(!is_in_groups){
+                    group* new_group = new group;
+                    group::groups.push_back(new_group);
+                    group::groups.back()->add(&termarr_bottom[termarr_left[g].bottom_f]);
+                    group::groups.back()->add(&termarr_bottom[termarr_left[count].bottom_f]);
+			    }
+
 				termarr_left[termarr_left[g].left_f].y_next_newterm(termarr_bottom[termarr_left[count].bottom_f].initial);
 				termarr_bottom[termarr_left[g].bottom_f].y_next_newterm(termarr_bottom[termarr_left[count].bottom_f].initial);
 				termarr_right[termarr_left[g].right_f].y_next_newterm(termarr_bottom[termarr_left[count].bottom_f].initial);
