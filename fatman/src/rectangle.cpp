@@ -471,6 +471,8 @@ void rectangle::x_grouping()//x single link
 
 void rectangle::y_grouping()//y single link
 {
+    vector<group*> temp_groups;
+
 	for( int g=0;g<terms;g++ )
 	{
 		int count=g+1;
@@ -480,15 +482,16 @@ void rectangle::y_grouping()//y single link
 			{
 
 			    bool is_in_groups=0;
-                for(int a=0;a<group::groups.size();a++){
-                    if(group::groups[a]->is_in_group(&termarr_bottom[termarr_left[g].bottom_f])){
-                        group::groups[a]->add(&termarr_bottom[termarr_left[count].bottom_f]);
+			    //here has a bug. it's always create a new group but no check some shape in created group
+                for(int a=0;a<temp_groups.size();a++){
+                    if(temp_groups[a]->is_in_group(&termarr_bottom[termarr_left[g].bottom_f])){
+                        temp_groups[a]->add(&termarr_bottom[termarr_left[count].bottom_f]);
                         cout<<"add "<<termarr_bottom[termarr_left[count].bottom_f].initial+1<<"into "<<a+1<<"'s group"<<endl;
                         is_in_groups = 1;
                         break;
                     }
-                    if(group::groups[a]->is_in_group(&termarr_bottom[termarr_left[count].bottom_f])){
-                        group::groups[a]->add(&termarr_bottom[termarr_left[g].bottom_f]);
+                    if(temp_groups[a]->is_in_group(&termarr_bottom[termarr_left[count].bottom_f])){
+                        temp_groups[a]->add(&termarr_bottom[termarr_left[g].bottom_f]);
                         cout<<"add "<<termarr_bottom[termarr_left[g].bottom_f].initial+1<<"into "<<a+1<<"'s group"<<endl;
                         is_in_groups = 1;
                         break;
@@ -497,11 +500,11 @@ void rectangle::y_grouping()//y single link
 
 			    if(!is_in_groups){
                     group* new_group = new group;
-                    group::groups.push_back(new_group);
-                    group::groups.back()->add(&termarr_bottom[termarr_left[g].bottom_f]);
-                    group::groups.back()->add(&termarr_bottom[termarr_left[count].bottom_f]);
-                    cout<<"add "<<termarr_bottom[termarr_left[g].bottom_f].initial+1<<"into "<<group::ordered_number-1<<"'s group"<<endl;
-                    cout<<"add "<<termarr_bottom[termarr_left[count].bottom_f].initial+1<<"into "<<group::ordered_number-1<<"'s group"<<endl;
+                    temp_groups.push_back(new_group);
+                    temp_groups.back()->add(&termarr_bottom[termarr_left[g].bottom_f]);
+                    temp_groups.back()->add(&termarr_bottom[termarr_left[count].bottom_f]);
+                    cout<<"add "<<termarr_bottom[termarr_left[g].bottom_f].initial+1<<"into "<<temp_groups.size()<<"'s group"<<endl;
+                    cout<<"add "<<termarr_bottom[termarr_left[count].bottom_f].initial+1<<"into "<<temp_groups.size()<<"'s group"<<endl;
 			    }
 
 				termarr_left[termarr_left[g].left_f].y_next_newterm(termarr_bottom[termarr_left[count].bottom_f].initial);
@@ -516,4 +519,6 @@ void rectangle::y_grouping()//y single link
 			}
 		}
 	}
+
+
 }
