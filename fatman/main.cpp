@@ -131,5 +131,7 @@ int main(int argc, char *argv[])
     //In_whitch_gruop static function using example
     cout<<group::In_which_group(&r.termarr[3])+1<<endl;
 
+    r.print_test_if_group();
+
     return 0;
 }

@@ -560,3 +560,10 @@ void rectangle::y_grouping()//y single link
 
 
 }
+
+void rectangle::print_test_if_group()
+{
+    for( int t=0 ; t<terms; t++ )
+    cout<<"termarr_bottom["<<t+1<<"].if_grouped is: "<<termarr_bottom[t].if_grouped<<endl;
+
+}
