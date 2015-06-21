@@ -111,11 +111,11 @@
 	"rectangle.h"
 	<iostream>
 
-1434779181 c:\users\mrbean\documents\github\fatman-run-run-run\fatman\include\term.h
+1434878383 c:\users\mrbean\documents\github\fatman-run-run-run\fatman\include\term.h
 	"group.h"
 	"rectangle.h"
 
-1434788458 c:\users\mrbean\documents\github\fatman-run-run-run\fatman\include\group.h
+1434887390 c:\users\mrbean\documents\github\fatman-run-run-run\fatman\include\group.h
 	"rectangle.h"
 	"term.h"
 	<vector>
@@ -125,15 +125,23 @@
 	"term.h"
 	"group.h"
 
-1434790396 source:c:\users\mrbean\documents\github\fatman-run-run-run\fatman\src\group.cpp
+1434883920 source:c:\users\mrbean\documents\github\fatman-run-run-run\fatman\src\group.cpp
 	"group.h"
 	"term.h"
 	<vector>
 	<iostream>
 
-1434790396 source:c:\users\mrbean\documents\github\fatman-run-run-run\fatman\src\rectangle.cpp
+1434884490 source:c:\users\mrbean\documents\github\fatman-run-run-run\fatman\src\rectangle.cpp
 	"rectangle.h"
 	"term.h"
 	"group.h"
 	<iostream>
+
+1434874034 source:c:\users\mrbean\documents\github\fatman-run-run-run\fatman\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	"group.h"
+	"term.h"
+	"rectangle.h"
 

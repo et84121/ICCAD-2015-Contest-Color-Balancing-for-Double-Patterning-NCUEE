@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
     }
 
     //In_whitch_gruop static function using example
-    cout<<group::In_which_group(&r.termarr[16])+1<<endl;
+    cout<<group::In_which_group(&r.termarr[3])+1<<endl;
 
     return 0;
 }

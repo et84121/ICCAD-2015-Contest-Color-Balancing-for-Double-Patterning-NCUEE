@@ -26,6 +26,12 @@ void group::add(term* T)
     pointer_vector.push_back(T);
 }
 
+void group::add_whole_group(int sgroup_num,int dgroup_num)
+{
+    for(int i=0;i<group::groups[sgroup_num]->pointer_vector.size();i++){
+    group::groups[dgroup_num]->add(group::groups[sgroup_num]->pointer_vector[i]);
+    }
+}
 
 void group::print()
 {
@@ -45,6 +51,11 @@ bool group::is_in_group(term* T)
         }
     }
     return 0;
+}
+
+void group::is_grouped(term* T)
+{
+    T->if_grouped=true;
 }
 
 
