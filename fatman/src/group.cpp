@@ -43,6 +43,19 @@ bool group::is_in_group(term* T)
             return 1;
             break;
         }
-        else   return 0;
     }
+    return 0;
+}
+
+
+int group::In_which_group(term* T)
+{
+    for(int a=0;a<group::groups.size();a++){
+        for(int b=0;b<group::groups[a]->pointer_vector.size();b++){
+            if(group::groups[a]->pointer_vector[b]->initial == T->initial){
+                return a;
+            }
+        }
+    }
+    return -1;
 }

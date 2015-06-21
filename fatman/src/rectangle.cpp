@@ -452,7 +452,7 @@ void rectangle::x_grouping()//x single link
                     cout<<"add "<<termarr_left[termarr_left[g].left_f].initial+1<<"into "<<group::ordered_number-1<<"'s group"<<endl;
                     cout<<"add "<<termarr_left[termarr_left[count].left_f].initial+1<<"into "<<group::ordered_number-1<<"'s group"<<endl;
 			    }
-			    //
+			    //grouping [ok]
 
 
 				termarr_left[termarr_left[g].left_f].x_next_newterm(termarr_left[termarr_left[count].left_f].initial);

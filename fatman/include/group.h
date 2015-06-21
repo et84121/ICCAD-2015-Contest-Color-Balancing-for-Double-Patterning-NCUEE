@@ -24,7 +24,7 @@ class group
         static vector<group*> groups;
         //this is a static member, it's offer a container to store all of the groups
         static int In_which_group(term *);
-        //this will return a number which is the order of the shape located group
+        //this will return which group is the shape located
     protected:
     private:
         vector<term *> pointer_vector;
