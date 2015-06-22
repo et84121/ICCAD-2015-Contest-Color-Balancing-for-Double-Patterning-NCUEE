@@ -114,6 +114,9 @@ int main(int argc, char *argv[])
     r.copy_bottom_f();//下邊界排序
     cout<<endl;
 
+    r.print_test_if_group();//測試if_group是否為default值
+    cout<<endl;
+
 	r.x_grouping();
 	r.x_group_print();
 	cout<<endl;
@@ -131,7 +134,7 @@ int main(int argc, char *argv[])
     //In_whitch_gruop static function using example
     cout<<group::In_which_group(&r.termarr[3])+1<<endl;
 
-    r.print_test_if_group();
+
 
     return 0;
 }

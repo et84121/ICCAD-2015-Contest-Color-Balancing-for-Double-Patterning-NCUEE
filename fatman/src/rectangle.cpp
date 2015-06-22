@@ -418,6 +418,7 @@ void rectangle::y_group_print()//output the result of y single link
 
 void rectangle::x_grouping()//x single link
 {
+
 	for( int g=0;g<terms;g++ )
 	{
 	    //g是比較的shape
@@ -472,6 +473,7 @@ void rectangle::x_grouping()//x single link
 void rectangle::y_grouping()//y single link
 {
     vector<group*> temp_groups;
+
 
 	for( int g=0;g<terms;g++ )
 	{
@@ -563,7 +565,8 @@ void rectangle::y_grouping()//y single link
 
 void rectangle::print_test_if_group()
 {
+
     for( int t=0 ; t<terms; t++ )
     cout<<"termarr_bottom["<<t+1<<"].if_grouped is: "<<termarr_bottom[t].if_grouped<<endl;
-
+    //print the result of if_grouped
 }
