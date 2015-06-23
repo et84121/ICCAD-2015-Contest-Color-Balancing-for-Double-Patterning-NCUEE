@@ -508,10 +508,12 @@ void rectangle::y_grouping()//y single link
                             }
 
                             else{
-                                cout<<"else add groups["<<group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])+1<<"] to groups["<<group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial])+1<<"]"<<endl;
 
+                                if(group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])==group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]))break;
+                                else{
+                                cout<<"else add groups["<<group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])+1<<"] to groups["<<group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial])+1<<"]"<<endl;
                                 group::add_whole_group(group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])+1,group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial])+1);
-                                //there have bug here
+                                }//there have bug here
                                 break;
                             }
                         }
