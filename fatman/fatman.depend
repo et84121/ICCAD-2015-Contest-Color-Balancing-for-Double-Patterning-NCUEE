@@ -1,28 +1,34 @@
 # depslib dependency file v1.0
-1434382024 source:c:\users\´Ü´Å\documents\github\fatman-run-run-run\fatman\main.cpp
+1435048126 source:c:\users\´Ü´Å\documents\github\fatman-run-run-run\fatman\main.cpp
 	<iostream>
 	<fstream>
+	<vector>
+	"group.h"
 	"term.h"
 	"rectangle.h"
 
 1432706886 .h"
 
-1434388947 c:\users\´Ü´Å\documents\github\fatman-run-run-run\fatman\include\term.h
+1435043974 c:\users\´Ü´Å\documents\github\fatman-run-run-run\fatman\include\term.h
+	"group.h"
 	"rectangle.h"
 
-1434382024 c:\users\´Ü´Å\documents\github\fatman-run-run-run\fatman\include\rectangle.h
+1435043974 c:\users\´Ü´Å\documents\github\fatman-run-run-run\fatman\include\rectangle.h
 	"term.h"
+	"group.h"
 
 1432706874 
 
-1434386867 source:c:\users\´Ü´Å\documents\github\fatman-run-run-run\fatman\src\rectangle.cpp
+1435049258 source:c:\users\´Ü´Å\documents\github\fatman-run-run-run\fatman\src\rectangle.cpp
 	"rectangle.h"
 	"term.h"
+	"group.h"
 	<iostream>
 
-1434382024 source:c:\users\´Ü´Å\documents\github\fatman-run-run-run\fatman\src\term.cpp
+1435043974 source:c:\users\´Ü´Å\documents\github\fatman-run-run-run\fatman\src\term.cpp
 	"term.h"
 	"rectangle.h"
+	<iostream>
 
 1434249310 source:/home/eec/Documents/fatman/main.cpp
 	<iostream>
@@ -157,6 +163,18 @@
 	<iostream>
 
 1434887951 source:c:\users\jimmy_chen\documents\github\fatman-run-run-run\fatman\src\group.cpp
+	"group.h"
+	"term.h"
+	<vector>
+	<iostream>
+
+1435050516 c:\users\´Ü´Å\documents\github\fatman-run-run-run\fatman\include\group.h
+	"rectangle.h"
+	"term.h"
+	<vector>
+	<iostream>
+
+1435048675 source:c:\users\´Ü´Å\documents\github\fatman-run-run-run\fatman\src\group.cpp
 	"group.h"
 	"term.h"
 	<vector>
