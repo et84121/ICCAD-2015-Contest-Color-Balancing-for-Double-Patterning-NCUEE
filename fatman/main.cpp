@@ -117,9 +117,6 @@ int main(int argc, char *argv[])
     r.print_test_if_group();//測試if_group是否為default值
     cout<<endl;
 
-//    r.print_test_if_conflict();//測試if_group是否為default值
-//    cout<<endl;
-
 	r.x_grouping();
 	r.x_group_print();
 	cout<<endl;

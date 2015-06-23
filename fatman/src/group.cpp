@@ -20,7 +20,6 @@ group::~group()
     //dtor
 }
 
-
 void group::add(term* T)
 {
     pointer_vector.push_back(T);
@@ -28,9 +27,10 @@ void group::add(term* T)
 
 void group::add_whole_group(int sgroup_num,int dgroup_num)//there have bug value did not match
 {
-    for(int i=0;i<group::groups[sgroup_num]->pointer_vector.size();i++){
-    group::groups[dgroup_num]->add(group::groups[sgroup_num]->pointer_vector[i]);
-    cout<<"add["<<sgroup_num<<"]: "<<group::groups[sgroup_num]->pointer_vector[i]->initial+1<<" to ["<<dgroup_num<<"]"<<endl;
+    for(int i=1;i<=(int)group::groups[sgroup_num]->pointer_vector.size();i++){
+    group::groups[dgroup_num]->add(group::groups[sgroup_num]->pointer_vector[i-1]);
+    cout<<"add["<<sgroup_num<<"]: "<<group::groups[sgroup_num]->pointer_vector[i-1]->initial+1<<" to ["<<dgroup_num<<"]"<<endl;
+    cout<<"size:"<<(int)group::groups[sgroup_num]->pointer_vector.size()<<endl;
     cin.get();
     }
 }

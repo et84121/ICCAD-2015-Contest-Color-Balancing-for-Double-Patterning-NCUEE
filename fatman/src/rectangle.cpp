@@ -443,6 +443,16 @@ void rectangle::x_grouping()//x single link
                         is_in_groups = 1;
                         break;
                     }
+                    if(group::groups[a]->is_in_group(&termarr_left[termarr_left[count].left_f])){
+                        group::groups[a]->add(&termarr_left[termarr_left[g].left_f]);
+                        //add term to group[a]
+
+                        group::groups[a]->is_grouped(&termarr[termarr_left[termarr_left[g].left_f].initial]);
+                        //set term if_grouped element to true by using group::is_grouped
+
+                        is_in_groups = 1;
+                        break;
+                    }
 
                 }
 
@@ -486,76 +496,37 @@ void rectangle::y_grouping()//y single link
 			if( ((termarr_bottom[termarr_left[g].bottom_f].right) > (termarr_bottom[termarr_left[count].bottom_f].left)) && ((termarr_bottom[termarr_left[g].bottom_f].left) < (termarr_bottom[termarr_left[count].bottom_f].right)))
 			{
 			    bool is_in_groups=0;
-			    //here has a bug. it's always create a new group but no check some shape in created group
-//                for(int a=0;a<temp_groups.size();a++){
-//                    if(temp_groups[a]->is_in_group(&termarr_bottom[termarr_left[g].bottom_f])){
-//                        //*********明天從這裡做增加If_grouped判斷式&if_conflict判斷式**********//
-//                        if(termarr[termarr_bottom[termarr_left[count].bottom_f].initial].if_grouped){ //already grouped
-//                            if(termarr[termarr_bottom[termarr_left[count].bottom_f].initial].if_conflict){
-//                                cout<<"add "<<group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])<<" to "<<group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])<<endl;
-//                                group::add_whole_group(group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial]),group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]));
-//
-//                                group::set_whole_conflict(group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]));
-//                                group::set_whole_conflict(group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial]));
-//                            }
-//
-//                            else{
-//                                group::add_whole_group(group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]),group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial]));
-//
-//                            }
-//                        }
-//                        else{
-//                        temp_groups[a]->add(&termarr_bottom[termarr_left[count].bottom_f]);
-//                        temp_groups[a]->is_grouped(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]);
-//                        cout<<"add "<<termarr_bottom[termarr_left[count].bottom_f].initial+1<<"into "<<a+1<<"'s group"<<endl;
-//                        is_in_groups = 1;
-//                        break;
-//                        }
-//                    }
-//                }
-//
-//			    if(!is_in_groups){
-//                    group* new_group = new group;
-//                    temp_groups.push_back(new_group);
-//                    temp_groups.back()->add(&termarr_bottom[termarr_left[g].bottom_f]);
-//                    temp_groups.back()->add(&termarr_bottom[termarr_left[count].bottom_f]);
-//                    temp_groups.back()->is_grouped(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial]);
-//                    temp_groups.back()->is_grouped(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]);
-//
-//                    cout<<"add "<<termarr_bottom[termarr_left[g].bottom_f].initial+1<<"into "<<temp_groups.size()<<"'s group"<<endl;
-//                    cout<<"add "<<termarr_bottom[termarr_left[count].bottom_f].initial+1<<"into "<<temp_groups.size()<<"'s group"<<endl;
-//			    }
+                //Merger x_groups && y_groups
                 for(int a=0;a<group::groups.size();a++){
-                        if(termarr[termarr_bottom[termarr_left[count].bottom_f].initial].if_grouped){//already grouped
-                            if(termarr[termarr_bottom[termarr_left[count].bottom_f].initial].if_conflict){
+                        if(termarr[termarr_bottom[termarr_left[count].bottom_f].initial].if_grouped){//if already grouped
+                            if(termarr[termarr_bottom[termarr_left[count].bottom_f].initial].if_conflict){ //if conflict
                                 cout<<"if add "<<group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])+1<<" to "<<group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial])+1<<endl;
                                 group::add_whole_group(group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial]),group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]));
-//
-//                                group::set_whole_conflict(group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]));
-//                                group::set_whole_conflict(group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial]));
+                                group::set_whole_conflict(group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]));
+                                group::set_whole_conflict(group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial]));
                                 break;
                             }
 
                             else{
                                 cout<<"else add groups["<<group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])+1<<"] to groups["<<group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial])+1<<"]"<<endl;
 
-                               // group::add_whole_group(group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])+1,group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial])+1);
+                                group::add_whole_group(group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])+1,group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial])+1);
                                 //there have bug here
                                 break;
                             }
                         }
-                        else if(group::groups[a]->is_in_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])){
-
-                            group::groups[a]->add(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]);
-//                            add term to group[a]
-
-                            group::groups[a]->is_grouped(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]);
-//                            set term if_grouped element to true by using group::is_grouped
+                        else if(group::groups[a]->is_in_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])){ //is g shape in a group
+                            group::groups[a]->add(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]);//add term to group[a]
+                            group::groups[a]->is_grouped(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]);//set term if_grouped element to true by using group::is_grouped
                             is_in_groups=1;
                             break;
-                            }
-
-
+                        }
+                        else if(group::groups[a]->is_in_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial])){ //is [count] shape in a group
+                            group::groups[a]->add(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial]);//add [g] shape to group[a]
+                            group::groups[a]->is_grouped(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial]);//set term if_grouped element to true by using group::is_grouped
+                            is_in_groups=1;
+                            break;
+                        }
                     }
 
 			    if(!is_in_groups){
