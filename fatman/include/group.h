@@ -16,7 +16,7 @@ class group
         virtual ~group();
         void add(term * T);
         //add a shape into the group
-        void add_whole_group(int,int);
+        static void add_whole_group(int,int);
         //add whole group in to another group  **will take lots of time
         static void set_whole_conflict(int);
         //set whole group certain constant
