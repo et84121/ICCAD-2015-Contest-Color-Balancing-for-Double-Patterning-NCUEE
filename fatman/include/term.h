@@ -30,6 +30,7 @@ class term
 		int y_next_capacity;
 		int y_next_terms;
         bool if_grouped;
+        bool if_conflict;
     protected:
     private:
 

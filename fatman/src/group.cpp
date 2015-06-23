@@ -26,10 +26,19 @@ void group::add(term* T)
     pointer_vector.push_back(T);
 }
 
-void group::add_whole_group(int sgroup_num,int dgroup_num)
+void group::add_whole_group(int sgroup_num,int dgroup_num)//there have bug value did not match
 {
     for(int i=0;i<group::groups[sgroup_num]->pointer_vector.size();i++){
     group::groups[dgroup_num]->add(group::groups[sgroup_num]->pointer_vector[i]);
+    cout<<"add["<<sgroup_num<<"]: "<<group::groups[sgroup_num]->pointer_vector[i]->initial+1<<" to ["<<dgroup_num<<"]"<<endl;
+    cin.get();
+    }
+}
+
+void group::set_whole_conflict(int group_num)
+{
+    for(int i=0;i<group::groups[group_num]->pointer_vector.size();i++){
+    group::groups[group_num]->is_conflict(group::groups[group_num]->pointer_vector[i]);
     }
 }
 
@@ -58,6 +67,10 @@ void group::is_grouped(term* T)
     T->if_grouped=true;
 }
 
+void group::is_conflict(term* T)
+{
+    T->if_conflict=true;
+}
 
 int group::In_which_group(term* T)
 {

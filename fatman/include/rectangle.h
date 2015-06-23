@@ -24,6 +24,7 @@ class rectangle
 		void y_grouping();
 		void y_group_print();
         void print_test_if_group();
+        void print_test_if_conflict();
 
 		term *termarr;//原始數值陣列
 		term *termarr_left;//以左邊界大小作排列的陣列

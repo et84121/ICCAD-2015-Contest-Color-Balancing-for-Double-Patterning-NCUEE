@@ -18,6 +18,8 @@ class group
         //add a shape into the group
         static void add_whole_group(int,int);
         //add whole group in to another group  **will take lots of time
+        static void set_whole_conflict(int);
+        //set whole group certain constant
         void print();
         //print all of the shape in this group
         static int ordered_number;
@@ -26,6 +28,8 @@ class group
         //if term is in group
         void is_grouped(term*);
         //if term is grouped or not
+        void is_conflict(term*);
+        //if term is conflict or not
         static vector<group*> groups;
         //this is a static member, it's offer a container to store all of the groups
         static int In_which_group(term *);

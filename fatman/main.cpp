@@ -117,14 +117,28 @@ int main(int argc, char *argv[])
     r.print_test_if_group();//代刚if_group琌default
     cout<<endl;
 
+//    r.print_test_if_conflict();//代刚if_group琌default
+//    cout<<endl;
+
 	r.x_grouping();
 	r.x_group_print();
 	cout<<endl;
+
+    r.print_test_if_group();//代刚if_group琌default
+    cout<<endl;
+
+//    r.print_test_if_conflict();//代刚if_group琌default
+//	cout<<endl;
 
 	r.y_grouping();
 	r.y_group_print();
 	cout<<endl;
 
+    r.print_test_if_group();//代刚if_group琌default
+    cout<<endl;
+
+//    r.print_test_if_conflict();//代刚if_group琌default
+//    cout<<endl;
 
     //print all of groups
     for(int a=0;a<group::groups.size();a++){
@@ -134,7 +148,7 @@ int main(int argc, char *argv[])
     //In_whitch_gruop static function using example
     cout<<group::In_which_group(&r.termarr[3])+1<<endl;
 
-    r.print_test_if_group();//代刚if_group琌default
+
 
     return 0;
 }
