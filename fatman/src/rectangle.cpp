@@ -527,6 +527,7 @@ void rectangle::y_grouping()//y single link
 
                 //bean
                 if(termarr[termarr_bottom[termarr_left[count].bottom_f].initial].if_grouped){//if already grouped
+                    cout<<"abcde"<<endl;
                     if(termarr[termarr_bottom[termarr_left[count].bottom_f].initial].if_conflict){ //if conflict
                         cout<<"if add "<<group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])+1<<" to "<<group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial])+1<<endl;
                         group::add_whole_group(group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial]),group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]));
@@ -536,7 +537,10 @@ void rectangle::y_grouping()//y single link
                         }
 
                     else{
-                        if(group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])!=group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial])){
+                        cout<<"else add groups["<<group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])+1<<"] to groups["<<group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial])+1<<"]"<<endl;
+                        cin.get();
+                        if(group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])==group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial]))break;
+                        else{
                             cout<<"else add groups["<<group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])+1<<"] to groups["<<group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial])+1<<"]"<<endl;
                             group::add_whole_group(group::In_which_group(&termarr[termarr_bottom[termarr_left[g].bottom_f].initial])+1,group::In_which_group(&termarr[termarr_bottom[termarr_left[count].bottom_f].initial])+1);
                             }
